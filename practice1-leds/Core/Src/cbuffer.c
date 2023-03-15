@@ -1,13 +1,21 @@
+/**
+  ******************************************************************************
+  * @file           : cbuffer.c
+  * @brief          : Simple circular buffer tools
+  ******************************************************************************
+  */
 
-/* Includes ------------------------------------------------------------------*/
-#include "cbuffer.h"
-
-/* Private includes ----------------------------------------------------------*/
 #include <assert.h>
 
-/* Private define ------------------------------------------------------------*/
-/* Private variables ---------------------------------------------------------*/
+#include "cbuffer.h"
 
+/**
+  * @brief  Circular buffer initialization.
+  * @param cbuffer: pointer to circular buffer data structure
+  * @param arr: pointer to the buffer content
+  * @param size: buffer size
+  * @retval None
+  */
 void cbuffer_init(cbuffer_handle_t cbuffer, uint16_t* arr, size_t size)
 {
   assert(arr);
@@ -16,6 +24,11 @@ void cbuffer_init(cbuffer_handle_t cbuffer, uint16_t* arr, size_t size)
   cbuffer->buffer = arr;
 }
 
+/**
+  * @brief  Advance circular buffer head.
+  * @param cbuffer: pointer to circular buffer data structure
+  * @retval uint16_t
+  */
 uint16_t cbuffer_next(cbuffer_handle_t cbuffer)
 {
   cbuffer->head++;
@@ -26,6 +39,11 @@ uint16_t cbuffer_next(cbuffer_handle_t cbuffer)
   return cbuffer->buffer[cbuffer->head];
 }
 
+/**
+  * @brief  Retract circular buffer head.
+  * @param cbuffer: pointer to circular buffer data structure
+  * @retval uint16_t
+  */
 uint16_t cbuffer_prev(cbuffer_handle_t cbuffer)
 {
   if (cbuffer->head == 0)

@@ -52,6 +52,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 void led_blink(GPIO_TypeDef* led_port, uint16_t led_pin, uint32_t delay_ms);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -76,6 +77,7 @@ int main(void)
   /* USER CODE BEGIN Init */
   /* FSM state variable */
   bool fsm_state = false;
+
   /* Circular buffer for LEDs sequence */
   cbuffer_t leds_cbuffer;
   cbuffer_init(&leds_cbuffer, leds_arr, LEDS_LENGTH);
@@ -204,6 +206,13 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+/**
+  * @brief Blink LED with a given delay.
+  * @param led_port: pointer to the LED port
+  * @param led_pin: LED pin
+  * @param delay_ms: Blink period in miliseconds
+  * @retval None
+  */
 void led_blink(GPIO_TypeDef *led_port, uint16_t led_pin, uint32_t delay_ms)
 {
   HAL_GPIO_TogglePin(led_port, led_pin);

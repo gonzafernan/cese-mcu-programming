@@ -1,5 +1,12 @@
-#ifndef __LEDS_H
-#define __LEDS_H
+/**
+  ******************************************************************************
+  * @file           : cbuffer.c
+  * @brief          : Simple circular buffer tools
+  ******************************************************************************
+  */
+
+#ifndef __CBUFFER_H
+#define __CBUFFER_H
 
 /* Includes ------------------------------------------------------------------*/
 /* Private includes ----------------------------------------------------------*/
@@ -21,4 +28,4 @@ void cbuffer_init(cbuffer_handle_t cbuffer, uint16_t* arr, size_t size);
 uint16_t cbuffer_next(cbuffer_handle_t cbuffer);
 uint16_t cbuffer_prev(cbuffer_handle_t cbuffer);
 
-#endif /* __LEDS_H */
+#endif /* __CBUFFER_H */

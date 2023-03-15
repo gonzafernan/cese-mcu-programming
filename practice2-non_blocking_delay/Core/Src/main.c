@@ -22,6 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdbool.h>
+#include <assert.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -198,6 +200,8 @@ static void MX_GPIO_Init(void)
   */
 void delay_init(delay_t* delay, tick_t duration)
 {
+  assert(delay);
+
   delay->duration = duration;
   delay->running = false;
 }
@@ -209,6 +213,8 @@ void delay_init(delay_t* delay, tick_t duration)
   */
 bool_t delay_read(delay_t* delay)
 {
+  assert(delay);
+
   if (!delay->running)
   {
     delay->start_time = HAL_GetTick();
@@ -233,6 +239,8 @@ bool_t delay_read(delay_t* delay)
   */
 void delay_write(delay_t* delay, tick_t duration)
 {
+  assert(delay);
+
   delay->duration = duration;
 }
 

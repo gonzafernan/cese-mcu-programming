@@ -53,3 +53,8 @@ dkms.conf
 
 # STM32Cube IDE
 .metadata
+**/build
+**/.mxproject
+
+# VS Code
+**/.vscode

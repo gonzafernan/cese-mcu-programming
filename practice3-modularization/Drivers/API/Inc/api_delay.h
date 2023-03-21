@@ -17,8 +17,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include "stm32f1xx_hal.h"
-
 /* Exported types ------------------------------------------------------------*/
 typedef uint32_t tick_t;
 typedef bool bool_t;

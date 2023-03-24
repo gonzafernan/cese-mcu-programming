@@ -1,5 +1,7 @@
 # Resolución de prácticas de Programación de Microcontroladores
 
+**Autor:** Gonzalo Gabriel Fernandez
+
 Las prácticas se encuentran resueltas para placa de desarrollo Blue Pill (Stm32f103c8t6).
 
 LEDs y USER_BUTTON conectados en:
